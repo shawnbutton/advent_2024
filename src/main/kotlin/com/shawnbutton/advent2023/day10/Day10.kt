@@ -46,11 +46,10 @@ fun findConnectedSymbols(grid: Array<Array<Char>>, current: Coord): List<Coord> 
     val allClose = surroundings
         .mapNotNull { possibleSymbol(grid, it) }
 
-//    return allClose.filter {
-//
-//    }
-
-        return listOf()
+    val connected = allClose.filter {
+        connections(it.first, it.second)?.contains(current) ?: false
+    }
+    return connected.map { it.first }
 }
 
 fun parseLine(line: String): Array<Char> {
@@ -62,7 +61,24 @@ fun createGrid(lines: List<String>): Array<Array<Char>> {
 }
 
 fun doPartA(lines: List<String>): Int {
+    val grid = createGrid(lines)
+
+    val current = Coord(1, 1)
+
+    val result = findConnectedSymbols(grid, current)
+
     return -1
+}
+
+fun findStartingPoint(grid: Array<Array<Char>>): Coord {
+    grid.forEachIndexed { y, row ->
+        row.forEachIndexed { x, char ->
+            if (char == 'S') {
+                return Coord(x, y)
+            }
+        }
+    }
+    return Coord(-1, -1)
 }
 
 fun doPartB(lines: List<String>): Int {

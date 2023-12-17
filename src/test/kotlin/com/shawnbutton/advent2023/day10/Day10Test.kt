@@ -5,7 +5,6 @@ import kotlin.test.assertContentEquals
 import kotlin.test.assertEquals
 
 class Day10Test {
-
     val line1 = "....."
     val line2 = ".S-7."
     val line3 = ".|.|."
@@ -56,16 +55,23 @@ class Day10Test {
         val result = findConnectedSymbols(grid, current)
 
         assertEquals(listOf(Coord(2, 1), Coord(1, 2)), result)
-
     }
 
 
+    @Test
+    fun `find starting point`() {
+        val grid = createGrid(lines)
 
-//    @Test
-//    fun doPartA() {
-//        assertEquals(-1, doPartA())
-//    }
-//
+        val result = findStartingPoint(grid)
+
+        assertEquals(Coord(1, 1), result)
+    }
+
+    @Test
+    fun `can do it `() {
+        assertEquals(-1, doPartA(lines))
+    }
+
 //    @Test
 //    fun doPartB() {
 //
