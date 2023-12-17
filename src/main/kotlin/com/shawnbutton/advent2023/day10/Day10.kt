@@ -13,16 +13,44 @@ data class Coord(val x: Int, val y: Int) {
         get() = Coord(x, y + 1)
 }
 
-fun connections(start: Coord, c: Char): Pair<Coord, Coord> {
+fun connections(start: Coord, c: Char): List<Coord>? {
     return when (c) {
-        '|' -> Pair(start.up, start.down)
-        '-' -> Pair(start.left, start.right)
-        'L' -> Pair(start.down.right, start.left.up)
-        'J' -> Pair(start.down.left, start.right.up)
-        '7' -> Pair(start.up.left, start.right.down)
-        'F' -> Pair(start.up.right, start.left.down)
-        else -> Pair(start, start)
+        '|' -> listOf(start.up, start.down)
+        '-' -> listOf(start.left, start.right)
+        'L' -> listOf(start.down.right, start.left.up)
+        'J' -> listOf(start.down.left, start.right.up)
+        '7' -> listOf(start.up.left, start.right.down)
+        'F' -> listOf(start.up.right, start.left.down)
+        else -> null
     }
+}
+
+fun possibleSymbol (grid: Array<Array<Char>>, loc: Coord): Pair<Coord, Char>? {
+    if (loc.x < 0 || loc.y < 0) return null
+    return Pair(loc, grid[loc.y][loc.x])
+}
+
+fun findConnectedSymbols(grid: Array<Array<Char>>, current: Coord): List<Coord> {
+
+    val surroundings = listOf(
+        current.up.left,
+        current.up,
+        current.up.right,
+        current.left,
+        current.right,
+        current.down.left,
+        current.down,
+        current.down.right
+    )
+
+    val allClose = surroundings
+        .mapNotNull { possibleSymbol(grid, it) }
+
+//    return allClose.filter {
+//
+//    }
+
+        return listOf()
 }
 
 fun parseLine(line: String): Array<Char> {

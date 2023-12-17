@@ -12,6 +12,8 @@ class Day10Test {
     val line4 = ".L-J."
     val line5 = "....."
 
+    val lines = listOf(line1, line2, line3, line4, line5)
+
     val line1Array = arrayOf('.', '.', '.', '.', '.')
     val line3Array = arrayOf('.', '|', '.', '|', '.')
 
@@ -37,13 +39,26 @@ class Day10Test {
     fun `can navigate based on character`() {
         val symbolLoc = Coord(5, 5)
 
-        assertEquals(Pair(Coord(5, 4), Coord(5, 6)), connections(symbolLoc, '|'))
-        assertEquals(Pair(Coord(4, 5), Coord(6, 5)), connections(symbolLoc, '-'))
-        assertEquals(Pair(Coord(6, 6), Coord(4, 4)), connections(symbolLoc, 'L'))
-        assertEquals(Pair(Coord(4, 6), Coord(6, 4)), connections(symbolLoc, 'J'))
-        assertEquals(Pair(Coord(4, 4), Coord(6, 6)), connections(symbolLoc, '7'))
-        assertEquals(Pair(Coord(6, 4), Coord(4, 6)), connections(symbolLoc, 'F'))
+        assertEquals(listOf(Coord(5, 4), Coord(5, 6)), connections(symbolLoc, '|'))
+        assertEquals(listOf(Coord(4, 5), Coord(6, 5)), connections(symbolLoc, '-'))
+        assertEquals(listOf(Coord(6, 6), Coord(4, 4)), connections(symbolLoc, 'L'))
+        assertEquals(listOf(Coord(4, 6), Coord(6, 4)), connections(symbolLoc, 'J'))
+        assertEquals(listOf(Coord(4, 4), Coord(6, 6)), connections(symbolLoc, '7'))
+        assertEquals(listOf(Coord(6, 4), Coord(4, 6)), connections(symbolLoc, 'F'))
     }
+
+    @Test
+    fun `can find symbols that connect to current `() {
+        val grid = createGrid(lines)
+
+        val current = Coord(1, 1)
+
+        val result = findConnectedSymbols(grid, current)
+
+        assertEquals(listOf(Coord(2, 1), Coord(1, 2)), result)
+
+    }
+
 
 
 //    @Test
