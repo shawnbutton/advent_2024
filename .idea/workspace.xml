@@ -84,9 +84,10 @@
     "Gradle.Day09Test.executor": "Run",
     "Gradle.Day09Test.should parse history line.executor": "Run",
     "Gradle.Day09Test.should recursively get change sequence.executor": "Debug",
+    "Gradle.Day10Test.can do it .executor": "Run",
     "Gradle.Day10Test.can find symbols that connect to current .executor": "Run",
     "Gradle.Day10Test.can navigate based on character.executor": "Run",
-    "Gradle.Day10Test.executor": "Run",
+    "Gradle.Day10Test.executor": "Debug",
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Kotlin.Day07Kt.executor": "Run",
@@ -156,7 +157,7 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day10Test">
+  <component name="RunManager" selected="Gradle.Day10Test.can navigate based on character">
     <configuration name="Day10Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -171,6 +172,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.shawnbutton.advent2023.day10.Day10Test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Day10Test.can do it " type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.shawnbutton.advent2023.day10.Day10Test.can do it &quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -251,20 +276,13 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day09Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2023.day09.Day09Kt" />
-      <module name="advent_2023_kotlin.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Day10Test.can navigate based on character" />
+        <item itemvalue="Gradle.Day10Test.can do it " />
         <item itemvalue="Gradle.Day10Test" />
         <item itemvalue="Gradle.Day10Test.can find symbols that connect to current " />
-        <item itemvalue="Gradle.Day10Test.can navigate based on character" />
         <item itemvalue="Gradle.Tests in 'advent_2023_kotlin.test'" />
-        <item itemvalue="Kotlin.Day09Kt" />
       </list>
     </recent_temporary>
   </component>
@@ -309,6 +327,50 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix template" />
     <option name="LAST_COMMIT_MESSAGE" value="fix template" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt</url>
+          <line>80</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt</url>
+          <line>75</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt</url>
+          <line>76</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt</url>
+          <line>77</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt</url>
+          <line>53</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt</url>
+          <line>51</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day10/Day10.kt</url>
+          <line>69</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

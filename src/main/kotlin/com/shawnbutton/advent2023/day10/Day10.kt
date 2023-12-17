@@ -17,15 +17,15 @@ fun connections(start: Coord, c: Char): List<Coord>? {
     return when (c) {
         '|' -> listOf(start.up, start.down)
         '-' -> listOf(start.left, start.right)
-        'L' -> listOf(start.down.right, start.left.up)
-        'J' -> listOf(start.down.left, start.right.up)
-        '7' -> listOf(start.up.left, start.right.down)
-        'F' -> listOf(start.up.right, start.left.down)
+        'L' -> listOf(start.up, start.right)
+        'J' -> listOf(start.left, start.up)
+        '7' -> listOf(start.left, start.down)
+        'F' -> listOf(start.right, start.down)
         else -> null
     }
 }
 
-fun possibleSymbol (grid: Array<Array<Char>>, loc: Coord): Pair<Coord, Char>? {
+fun possibleSymbol(grid: Array<Array<Char>>, loc: Coord): Pair<Coord, Char>? {
     if (loc.x < 0 || loc.y < 0) return null
     return Pair(loc, grid[loc.y][loc.x])
 }
@@ -47,7 +47,9 @@ fun findConnectedSymbols(grid: Array<Array<Char>>, current: Coord): List<Coord> 
         .mapNotNull { possibleSymbol(grid, it) }
 
     val connected = allClose.filter {
-        connections(it.first, it.second)?.contains(current) ?: false
+        val connections = connections(it.first, it.second)
+        val found = connections?.contains(current) ?: false
+        found
     }
     return connected.map { it.first }
 }
@@ -63,11 +65,20 @@ fun createGrid(lines: List<String>): Array<Array<Char>> {
 fun doPartA(lines: List<String>): Int {
     val grid = createGrid(lines)
 
-    val current = Coord(1, 1)
+    val start = findStartingPoint(grid)
 
-    val result = findConnectedSymbols(grid, current)
+    val result = findConnectedSymbols(grid, start)
 
-    return -1
+    // arbitrarily pick starting point
+    var on = result.first()
+
+    var count = 1
+    while (on != start) {
+        on = findConnectedSymbols(grid, on).first()
+        count++
+    }
+
+    return count
 }
 
 fun findStartingPoint(grid: Array<Array<Char>>): Coord {

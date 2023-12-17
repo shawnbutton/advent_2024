@@ -40,10 +40,10 @@ class Day10Test {
 
         assertEquals(listOf(Coord(5, 4), Coord(5, 6)), connections(symbolLoc, '|'))
         assertEquals(listOf(Coord(4, 5), Coord(6, 5)), connections(symbolLoc, '-'))
-        assertEquals(listOf(Coord(6, 6), Coord(4, 4)), connections(symbolLoc, 'L'))
-        assertEquals(listOf(Coord(4, 6), Coord(6, 4)), connections(symbolLoc, 'J'))
-        assertEquals(listOf(Coord(4, 4), Coord(6, 6)), connections(symbolLoc, '7'))
-        assertEquals(listOf(Coord(6, 4), Coord(4, 6)), connections(symbolLoc, 'F'))
+        assertEquals(listOf(Coord(5, 4), Coord(6, 5)), connections(symbolLoc, 'L'))
+        assertEquals(listOf(Coord(4, 5), Coord(5, 4)), connections(symbolLoc, 'J'))
+        assertEquals(listOf(Coord(4, 5), Coord(5, 6)), connections(symbolLoc, '7'))
+        assertEquals(listOf(Coord(6, 5), Coord(5, 6)), connections(symbolLoc, 'F'))
     }
 
     @Test
@@ -69,7 +69,7 @@ class Day10Test {
 
     @Test
     fun `can do it `() {
-        assertEquals(-1, doPartA(lines))
+        assertEquals(4, doPartA(lines))
     }
 
 //    @Test
