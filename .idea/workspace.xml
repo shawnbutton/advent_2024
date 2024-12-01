@@ -174,8 +174,8 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day01Kt">
-    <configuration name="Day10Test.can do it " type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Day01Test">
+    <configuration name="Day01Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -188,7 +188,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day10.Day10Test.can do it &quot;" />
+            <option value="&quot;com.shawnbutton.advent2024.day01.Day01Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -263,11 +263,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Day01Test" />
         <item itemvalue="Kotlin.Day01Kt" />
         <item itemvalue="Kotlin.Day10Kt" />
         <item itemvalue="Gradle.Day10Test.can do part A" />
         <item itemvalue="Gradle.Day10Test.can navigate based on character" />
-        <item itemvalue="Gradle.Day10Test.can do it " />
       </list>
     </recent_temporary>
   </component>

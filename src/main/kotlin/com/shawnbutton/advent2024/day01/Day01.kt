@@ -10,8 +10,6 @@ fun Int?.isLessThan(other: Int?) =
 fun main() {
     val lines = loadFile("/day01.txt")
 
-    print(sumAll(lines))
     print("\n")
-    print(sumAllWithWords(lines))
 }
 
