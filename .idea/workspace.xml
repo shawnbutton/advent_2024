@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="fix template">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01/Day01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01/Day01.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/day01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/day01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day02.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day03.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day04.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day05.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day07.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day08.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day09.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2024/day01/Day01Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2024/day01/Day01Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +72,7 @@
     "Downloaded.Files.Path.Enabled": "false",
     "Gradle.Build advent_2023_kotlin.executor": "Run",
     "Gradle.Build advent_2024_kotlin.executor": "Run",
+    "Gradle.Day01Test.executor": "Run",
     "Gradle.Day07Test.do part a.executor": "Run",
     "Gradle.Day07Test.do part b.executor": "Run",
     "Gradle.Day07Test.executor": "Run",
@@ -103,7 +97,7 @@
     "Gradle.Day10Test.executor": "Debug",
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
-    "Kotlin.Day01Kt.executor": "Run",
+    "Kotlin.Day01Kt.executor": "Debug",
     "Kotlin.Day07Kt.executor": "Run",
     "Kotlin.Day08Kt.executor": "Run",
     "Kotlin.Day09Kt.executor": "Run",
@@ -174,7 +168,7 @@
       <recent name="com.shawnbutton.advent2023" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day01Test">
+  <component name="RunManager" selected="Kotlin.Day01Kt">
     <configuration name="Day01Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -263,8 +257,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Day01Test" />
         <item itemvalue="Kotlin.Day01Kt" />
+        <item itemvalue="Gradle.Day01Test" />
         <item itemvalue="Kotlin.Day10Kt" />
         <item itemvalue="Gradle.Day10Test.can do part A" />
         <item itemvalue="Gradle.Day10Test.can navigate based on character" />
@@ -302,6 +296,47 @@
     <option featureType="dependencySupport" implementationName="executable:docker" />
     <option featureType="dependencySupport" implementationName="executable:kubectl" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="6b234b86-49a3-4cf3-9127-2beb16f4ff7e" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="6b234b86-49a3-4cf3-9127-2beb16f4ff7e">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/shawnbutton/projects/advent_2024_kotlin/src/test/kotlin/com/shawnbutton/advent2024/day01" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix template" />
     <option name="LAST_COMMIT_MESSAGE" value="fix template" />
@@ -331,6 +366,11 @@
             <option name="lambda-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01/Day01.kt</url>
+          <line>34</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
