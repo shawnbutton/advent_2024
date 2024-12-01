@@ -68,7 +68,7 @@ class Day10Test {
     }
 
     @Test
-    fun `can do it `() {
+    fun `can do part A`() {
         assertEquals(4, doPartA(lines))
     }
 

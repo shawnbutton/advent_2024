@@ -1,5 +1,6 @@
 package com.shawnbutton.advent2023
 
+import com.shawnbutton.advent2024.loadFile
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*

@@ -1,6 +1,6 @@
 package com.shawnbutton.advent2023.day01
 
-import com.shawnbutton.advent2023.loadFile
+import com.shawnbutton.advent2024.loadFile
 
 fun Int?.isLessThan(other: Int?) =
     this != null && other != null && this < other
@@ -13,9 +13,7 @@ fun calcDigits(line: String): Int {
 }
 
 fun sumAll(lines: List<String>): Int {
-    return lines
-        .map(::calcDigits)
-        .sum()
+    return lines.sumOf(::calcDigits)
 }
 fun calcDigitsWithWords (line: String): Int {
     val numberWords = listOf("one", "two", "three", "four", "five", "six", "seven", "eight", "nine")
@@ -65,9 +63,7 @@ fun lastToken(tokenHits: List<List<Int>>): Int? {
 }
 
 fun sumAllWithWords(lines: List<String>): Int {
-    return lines
-        .map(::calcDigitsWithWords)
-        .sum()
+    return lines.sumOf(::calcDigitsWithWords)
 }
 
 fun main() {

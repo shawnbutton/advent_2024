@@ -1,9 +1,8 @@
 package com.shawnbutton.advent2023.day05
 
-import com.shawnbutton.advent2023.loadFile
+import com.shawnbutton.advent2024.loadFile
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import kotlin.test.assertContentEquals
 
 class Day05Test {
 
