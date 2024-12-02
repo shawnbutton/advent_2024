@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="fix template">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day02/Day02.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day02.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2024/day02/Day02Test.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/LoadFile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/LoadFile.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01/Day01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01/Day01.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2024/day01/Day01Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2024/day01/Day01Test.kt" afterDir="false" />
     </list>
@@ -73,6 +75,7 @@
     "Gradle.Build advent_2023_kotlin.executor": "Run",
     "Gradle.Build advent_2024_kotlin.executor": "Run",
     "Gradle.Day01Test.executor": "Run",
+    "Gradle.Day02Test.executor": "Run",
     "Gradle.Day07Test.do part a.executor": "Run",
     "Gradle.Day07Test.do part b.executor": "Run",
     "Gradle.Day07Test.executor": "Run",
@@ -98,6 +101,7 @@
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
     "Kotlin.Day01Kt.executor": "Run",
+    "Kotlin.Day02Kt.executor": "Run",
     "Kotlin.Day07Kt.executor": "Run",
     "Kotlin.Day08Kt.executor": "Run",
     "Kotlin.Day09Kt.executor": "Run",
@@ -115,7 +119,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "/Users/shawnbutton/projects/advent_2023_kotlin/src/main/kotlin",
-    "last_opened_file_path": "/Users/shawnbutton/projects/advent_2024_kotlin/src/main/kotlin/com/shawnbutton",
+    "last_opened_file_path": "/Users/shawnbutton/projects/advent_2024_kotlin/src/test/kotlin/com/shawnbutton/advent2024",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -132,11 +136,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2024" />
+      <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton" />
       <recent name="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2023" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2023/day09" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -167,8 +171,11 @@
       <recent name="com.shawnbutton.advent2023.day05" />
       <recent name="com.shawnbutton.advent2023" />
     </key>
+    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="com.shawnbutton.advent2024.day02" />
+    </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day01Kt">
+  <component name="RunManager" selected="Gradle.Day02Test">
     <configuration name="Day01Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -193,7 +200,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Day10Test.can do part A" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Day02Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -206,31 +213,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day10.Day10Test.can do part A&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Day10Test.can navigate based on character" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.shawnbutton.advent2023.day10.Day10Test.can navigate based on character&quot;" />
+            <option value="&quot;com.shawnbutton.advent2024.day02.Day02Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -248,6 +231,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day02Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2024.day02.Day02Kt" />
+      <module name="advent_2023_kotlin.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Day10Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.shawnbutton.advent2024.day10.Day10Kt" />
       <module name="advent_2023_kotlin.main" />
@@ -257,11 +247,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Day02Test" />
+        <item itemvalue="Kotlin.Day02Kt" />
         <item itemvalue="Kotlin.Day01Kt" />
         <item itemvalue="Gradle.Day01Test" />
         <item itemvalue="Kotlin.Day10Kt" />
-        <item itemvalue="Gradle.Day10Test.can do part A" />
-        <item itemvalue="Gradle.Day10Test.can navigate based on character" />
       </list>
     </recent_temporary>
   </component>
@@ -366,11 +356,6 @@
             <option name="lambda-ordinal" value="-1" />
           </properties>
           <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01/Day01.kt</url>
-          <line>35</line>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

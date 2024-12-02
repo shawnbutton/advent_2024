@@ -1,5 +1,7 @@
 package com.shawnbutton.advent2024.day01
 
+import com.shawnbutton.advent2024.day02.doit1
+import com.shawnbutton.advent2024.day02.doit2
 import com.shawnbutton.advent2024.loadFile
 import kotlin.math.abs
 
