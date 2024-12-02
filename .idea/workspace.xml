@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9855de50-b7e0-4f6b-84f6-acc915c261c0" name="Changes" comment="fix template">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/LoadFile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/LoadFile.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01/Day01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01/Day01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/day01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/day01.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2024/day01/Day01Test.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/com/shawnbutton/advent2024/day01/Day01Test.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +97,7 @@
     "Gradle.Day10Test.executor": "Debug",
     "Gradle.Tests in 'advent_2023_kotlin.test'.executor": "Run",
     "Gradle.Upgrade Gradle wrapper.executor": "Run",
-    "Kotlin.Day01Kt.executor": "Debug",
+    "Kotlin.Day01Kt.executor": "Run",
     "Kotlin.Day07Kt.executor": "Run",
     "Kotlin.Day08Kt.executor": "Run",
     "Kotlin.Day09Kt.executor": "Run",
@@ -369,7 +369,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/com/shawnbutton/advent2024/day01/Day01.kt</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>

@@ -32,10 +32,14 @@ class Day01Test {
     }
 
     @Test
-    fun should_do_it() {
-        Assertions.assertEquals(11, doit(inputStrings))
+    fun should_do_it_1() {
+        Assertions.assertEquals(11, doit1(inputStrings))
     }
 
+    @Test
+    fun should_do_it_2() {
+        Assertions.assertEquals(31, doit2(inputStrings))
+    }
 
 
 }

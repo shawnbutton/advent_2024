@@ -6,11 +6,11 @@ import kotlin.math.abs
 fun Int?.isLessThan(other: Int?) =
     this != null && other != null && this < other
 
-
 fun main() {
     val lines = loadFile("/day01.txt")
 
-    println(doit(lines))
+    println(doit1(lines))
+    println(doit2(lines))
 }
 
 fun inputToIntegers(input: String): Pair<Int, Int> {
@@ -24,7 +24,7 @@ fun linesToLists(lines: List<String>): Pair<List<Int>, List<Int>> {
         .unzip()
 }
 
-fun doit(lines: List<String>): Int {
+fun doit1(lines: List<String>): Int {
     val (first, second) = linesToLists(lines)
     val firstSorted = first.sorted()
     val secondSorted = second.sorted()
@@ -34,4 +34,15 @@ fun doit(lines: List<String>): Int {
         .sumOf { (first, second) ->
             abs(first - second)
         }
+}
+
+fun doit2(lines: List<String>): Int {
+    val (first, second) = linesToLists(lines)
+
+    return first.sumOf { firstNumber ->
+        firstNumber * second.count {
+            it == firstNumber
+        }
+    }
+
 }
