@@ -1,4 +1,4 @@
-# Kata Template
+# Day03 Template
 
 This is the TypeScript code kata template.
 
