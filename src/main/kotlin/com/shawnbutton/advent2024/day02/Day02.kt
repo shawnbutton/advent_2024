@@ -11,9 +11,7 @@ fun main() {
 }
 
 fun lineToInts(line: String): List<Int> {
-    return line.split(" ").map {
-        it -> it.toInt()
-    }
+    return line.split(" ").map(String::toInt)
 }
 
 fun inputToIntegers(lines: List<String>): List<List<Int>> {
@@ -21,21 +19,21 @@ fun inputToIntegers(lines: List<String>): List<List<Int>> {
 }
 
 fun checkSafety(numbers: List<Int>): Boolean {
-    var direction = 0
+    var lastDirection = 0
 
     for (i in 1 until numbers.size) {
         val diff = numbers[i] - numbers[i - 1]
 
-        if (diff > 0 && direction < 0) {
+        if (diff > 0 && lastDirection < 0) {
             return false
         }
 
-        if (diff < 0 && direction > 0) {
+        if (diff < 0 && lastDirection > 0) {
             return false
         }
 
         if (diff != 0) {
-            direction = diff
+            lastDirection = diff
         }
 
         val diffAbs = Math.abs(diff)
