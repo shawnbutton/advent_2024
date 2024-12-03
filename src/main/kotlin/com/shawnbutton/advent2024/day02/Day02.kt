@@ -50,5 +50,22 @@ fun doit1(lines: List<String>): Int {
 }
 
 fun doit2(lines: List<String>): Int {
-    return -999
+    val allLines = inputToIntegers(lines)
+
+    return allLines.filter { steps ->
+        if (checkSafety(steps)) {
+            return@filter true
+        }
+
+        for (index in steps.indices) {
+            val smallerList = steps
+                .toMutableList()
+                .apply { removeAt(index) }
+
+            if (checkSafety(smallerList)) return@filter true
+        }
+
+        return@filter false
+    }.size
+
 }

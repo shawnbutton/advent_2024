@@ -56,8 +56,13 @@ class Day02Test {
     }
 
     @Test
-    fun doIt() {
+    fun doIt1() {
         assertEquals(2, doit1(inputStrings))
+    }
+
+    @Test
+    fun doIt2() {
+        assertEquals(4, doit2(inputStrings))
     }
 
 }
