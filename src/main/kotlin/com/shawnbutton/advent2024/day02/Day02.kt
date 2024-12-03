@@ -20,6 +20,18 @@ fun inputToIntegers(lines: List<String>): List<List<Int>> {
     return lines.map(::lineToInts)
 }
 
+fun checkSafety(numbers: List<Int>): Boolean {
+    for (i in 1 until numbers.size) {
+        val diff = Math.abs(numbers[i] - numbers[i - 1])
+        if (diff > 3 || diff == 0) {
+            return false
+        }
+
+
+    }
+    return true
+}
+
 fun doit1(lines: List<String>): Int {
     return -999
 }

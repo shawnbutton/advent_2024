@@ -1,6 +1,8 @@
 package com.shawnbutton.advent2024.day02
 
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class Day02Test {
@@ -15,7 +17,7 @@ class Day02Test {
     )
 
     @Test
-    fun should_parse_a_line_into_list_of_integers() {
+    fun should_parse_lines_into_lists_of_integers() {
         val given = listOf("1 2 3", "4 5 6")
         val result = inputToIntegers(given)
 
@@ -23,7 +25,28 @@ class Day02Test {
             listOf(1, 2, 3),
             listOf(4, 5, 6)
         )
-        Assertions.assertEquals(expected, result)
+        assertEquals(expected, result)
+    }
+
+    @Test
+    fun should_be_safe_inc_or_dec_steadily() {
+        assertTrue(checkSafety(listOf(1, 2, 3)))
+        assertTrue(checkSafety(listOf(1, 2, 4)))
+        assertTrue(checkSafety(listOf(1, 2, 5)))
+        assertTrue(checkSafety(listOf(3, 2, 1)))
+        assertTrue(checkSafety(listOf(4, 3, 1)))
+        assertTrue(checkSafety(listOf(5, 4, 1)))
+    }
+
+    @Test
+    fun should_be_unsafe_if_more_than_3_difference() {
+        assertFalse(checkSafety(listOf(1, 2, 6)))
+        assertFalse(checkSafety(listOf(6, 5, 1)))
+    }
+
+    @Test
+    fun should_be_unsafe_if_same_number_twice() {
+        assertFalse(checkSafety(listOf(1, 2, 2)))
     }
 
 }
