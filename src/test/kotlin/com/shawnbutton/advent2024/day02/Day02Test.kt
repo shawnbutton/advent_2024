@@ -49,4 +49,15 @@ class Day02Test {
         assertFalse(checkSafety(listOf(1, 2, 2)))
     }
 
+    @Test
+    fun should_be_unsafe_if_chnges_direction() {
+        assertFalse(checkSafety(listOf(1, 2, 1)))
+        assertFalse(checkSafety(listOf(3, 2, 3)))
+    }
+
+    @Test
+    fun doIt() {
+        assertEquals(2, doit1(inputStrings))
+    }
+
 }

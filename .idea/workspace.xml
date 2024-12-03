@@ -172,7 +172,7 @@
       <recent name="com.shawnbutton.advent2024.day02" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Day02Test">
+  <component name="RunManager" selected="Kotlin.Day02Kt">
     <configuration name="Day01Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -244,8 +244,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Day02Test" />
         <item itemvalue="Kotlin.Day02Kt" />
+        <item itemvalue="Gradle.Day02Test" />
         <item itemvalue="Kotlin.Day01Kt" />
         <item itemvalue="Gradle.Day01Test" />
         <item itemvalue="Kotlin.Day10Kt" />

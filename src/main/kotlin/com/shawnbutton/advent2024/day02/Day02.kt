@@ -21,19 +21,34 @@ fun inputToIntegers(lines: List<String>): List<List<Int>> {
 }
 
 fun checkSafety(numbers: List<Int>): Boolean {
+    var direction = 0
+
     for (i in 1 until numbers.size) {
-        val diff = Math.abs(numbers[i] - numbers[i - 1])
-        if (diff > 3 || diff == 0) {
+        val diff = numbers[i] - numbers[i - 1]
+
+        if (diff > 0 && direction < 0) {
             return false
         }
 
+        if (diff < 0 && direction > 0) {
+            return false
+        }
+
+        if (diff != 0) {
+            direction = diff
+        }
+
+        val diffAbs = Math.abs(diff)
+        if (diffAbs > 3 || diffAbs == 0) {
+            return false
+        }
 
     }
     return true
 }
 
 fun doit1(lines: List<String>): Int {
-    return -999
+    return inputToIntegers(lines).count(::checkSafety)
 }
 
 fun doit2(lines: List<String>): Int {
