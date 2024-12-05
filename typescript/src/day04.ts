@@ -1,10 +1,59 @@
 import {readFileSync} from 'fs';
 import {join} from 'path';
 
+export type Coordinate = [number, number]
 
-export function someFunction(): string {
-    return 'expectation'
+export class Grid {
+    constructor(private grid: string[][]) {
+    }
+
+    valueAt(x, y): string {
+        return this.grid[y][x]
+    }
+
+    right(x, y): string {
+        return this.valueAt(x + 1, y)
+    }
+
+    left(x: number, y: number) {
+        return this.valueAt(x - 1, y)
+    }
+
+    up(x: number, y: number) {
+        return this.valueAt(x, y - 1)
+    }
+
+    down(x: number, y: number) {
+        return this.valueAt(x, y + 1)
+    }
+
+    upleft(x: number, y: number) {
+        return this.valueAt(x - 1, y - 1)
+    }
+
+    upright(x: number, y: number) {
+        return this.valueAt(x + 1, y - 1)
+    }
+
+    downleft(x: number, y: number) {
+        return this.valueAt(x - 1, y + 1)
+    }
+
+    downright(x: number, y: number) {
+        return this.valueAt(x + 1, y + 1)
+    }
+
+
 }
+
+// export function findNext(grid, coordinates: Coordinate, letter: string): Coordinate[] {
+//     const newCoordinates = right(coordinates)
+//
+//     if (getAt(grid, newCoordinates) === letter) return [newCoordinates]
+//
+//     return []
+// }
+
 
 export function doit1(testInput: string[]) {
 
