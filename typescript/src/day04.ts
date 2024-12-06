@@ -7,9 +7,9 @@ export class Grid {
     constructor(private grid: string[][]) {
     }
 
-    valueAt(x, y): string | undefined {
-        if (x < 0 || x >= this.grid[0].length) return undefined
-        if (y < 0 || y >= this.grid.length) return undefined
+    valueAt(x, y): string | '' {
+        if (x < 0 || x >= this.grid[0].length) return ''
+        if (y < 0 || y >= this.grid.length) return ''
         return this.grid[y][x]
     }
 
@@ -29,25 +29,70 @@ export class Grid {
     }
 
     getMatching(character, x, y) {
-        this.getNeighbours(x, y)
+        return this.getNeighbours(x, y)
             .filter(neighbour => {
-                neighbour[2]
+                    return character === neighbour[2]
                 }
             )
-
     }
 
-    doit1() {
+    doit1
+    () {
+        let totalXmas = 0
 
         for (let y = 0; y < this.grid.length; y++) {
             for (let x = 0; x < this.grid[y].length; x++) {
                 const value = this.valueAt(x, y);
                 if (value === 'X') {
-                    const neighbours = this.getNeighbours(x, y)
+                    let allPossible = [
+                        this.valueAt(x + 1, y) + this.valueAt(x + 2, y) + this.valueAt(x + 3, y), // right
+                        this.valueAt(x - 1, y) + this.valueAt(x - 2, y) + this.valueAt(x - 3, y), // left
+                        this.valueAt(x, y - 1) + this.valueAt(x, y - 2) + this.valueAt(x, y - 3), // up
+                        this.valueAt(x, y + 1) + this.valueAt(x, y + 2) + this.valueAt(x, y + 3), // down
+                        this.valueAt(x + 1, y + 1) + this.valueAt(x + 2, y + 2) + this.valueAt(x + 3, y + 3), // downright
+                        this.valueAt(x - 1, y + 1) + this.valueAt(x - 2, y + 2) + this.valueAt(x - 3, y + 3), // downleft
+                        this.valueAt(x + 1, y - 1) + this.valueAt(x + 2, y - 2) + this.valueAt(x + 3, y - 3), // upright
+                        this.valueAt(x - 1, y - 1) + this.valueAt(x - 2, y - 2) + this.valueAt(x - 3, y - 3), // upleft
+                    ];
+                    const xmas = allPossible
+                        .filter(possible => {
+                        return possible === 'MAS'
+                    } )
+
+                    totalXmas += xmas.length
                 }
             }
         }
 
+        return totalXmas
+
+    }
+
+    doitTOOMUCH() {
+        let totalXmas = 0
+
+        for (let y = 0; y < this.grid.length; y++) {
+            for (let x = 0; x < this.grid[y].length; x++) {
+                const value = this.valueAt(x, y);
+                if (value === 'X') {
+                    const matchingM = this.getMatching("M", x, y)
+
+                    const matchingA = matchingM.flatMap(match => {
+                        const matching = this.getMatching("A", match[0], match[1]);
+                        return matching
+                    })
+
+                    const matchingS = matchingA.flatMap(match => {
+                        const matching = this.getMatching("S", match[0], match[1]);
+                        return matching
+                    })
+
+                    totalXmas += matchingS.length
+                }
+            }
+        }
+
+        return totalXmas
 
     }
 
@@ -68,5 +113,7 @@ export function doit2(testInput: string[]) {
 const filePath = join(__dirname, 'day04.txt');
 const fileContent = readFileSync(filePath, 'utf-8').split("\n")!;
 
-// console.log(doit1(fileContent))
+const grid = loadGrid(fileContent)
+
+console.log(grid.doit1())
 // console.log(doit2(fileContent))

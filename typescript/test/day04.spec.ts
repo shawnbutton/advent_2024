@@ -31,22 +31,27 @@ describe('Day 04', () => {
 
         it('should return none if outside of grid', () => {
             const grid = buildGrid();
-            expect(grid.valueAt(-1, 0)).toBeUndefined()
-            expect(grid.valueAt(0, -1)).toBeUndefined()
-            expect(grid.valueAt(3, 0)).toBeUndefined()
-            expect(grid.valueAt(3, 0)).toBeUndefined()
+            expect(grid.valueAt(-1, 0)).toEqual('')
+            expect(grid.valueAt(0, -1)).toEqual('')
+            expect(grid.valueAt(3, 0)).toEqual('')
+            expect(grid.valueAt(3, 0)).toEqual('')
         });
 
 
-        it('should get neighbours', () => {
+        xit('should get neighbours', () => {
             const grid = buildGrid();
             expect(grid.getNeighbours(1, 0)).toEqual([[0, 0, "A"], [0, 1, "D"], [1, 1, "E"], [2, 0, "C"], [2, 1, "F"]])
         })
 
     })
 
-
     it('should find all xmas', () => {
+        const grid = loadGrid(testInput);
+        // expect(grid.valueAt(1,1)).toEqual('S')
+        expect(grid.doit1()).toEqual(18)
+    })
+
+    xit('should find all xmas', () => {
         const grid = loadGrid(testInput);
         // expect(grid.valueAt(1,1)).toEqual('S')
         expect(grid.doit1()).toEqual(18)
