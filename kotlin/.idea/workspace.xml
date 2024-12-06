@@ -168,7 +168,7 @@
       <recent name="com.shawnbutton.advent2024.day02" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Day02Kt">
+  <component name="RunManager">
     <configuration name="Day01Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -238,15 +238,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Kotlin.Day02Kt" />
-        <item itemvalue="Gradle.Day02Test" />
-        <item itemvalue="Kotlin.Day01Kt" />
-        <item itemvalue="Gradle.Day01Test" />
-        <item itemvalue="Kotlin.Day10Kt" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
