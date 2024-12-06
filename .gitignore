@@ -3,6 +3,7 @@ kotlin/build/
 !kotlin/gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+kotlin/.idea/
 
 ### IntelliJ IDEA ###
 kotlin/.idea/modules.xml
