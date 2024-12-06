@@ -1,4 +1,4 @@
-kotlin/.gradle
+.gradle
 kotlin/build/
 !kotlin/gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
