@@ -1,4 +1,4 @@
-import {doit1, Grid} from '../src/day04';
+import {Grid, loadGrid} from '../src/day04';
 
 const testInput = [
     'MMMSXXMASM',
@@ -77,11 +77,19 @@ describe('Day 04', () => {
             expect(grid.right(2, 0)).toBeNull()
         });
 
+
+        it('should get neighbours', () => {
+            const grid = buildGrid();
+            expect(grid.getNeighbours(1, 0)).toEqual([[0, 0, "A"], [0, 1, "D"], [1, 1, "E"], [2, 0, "C"], [2, 1, "F"]])
+        })
+
     })
 
 
-    xit('should find all xmas', () => {
-        expect(doit1(testInput)).toEqual(18)
+    it('should find all xmas', () => {
+        const grid = loadGrid(testInput);
+        // expect(grid.valueAt(1,1)).toEqual('S')
+        expect(grid.doit1()).toEqual(18)
     })
 
 

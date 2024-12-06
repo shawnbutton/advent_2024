@@ -8,8 +8,8 @@ export class Grid {
     }
 
     valueAt(x, y): string | null {
-        if (x < 0 || x >= this.grid[0].length)  return null
-        if (y < 0 || y >= this.grid.length)  return null
+        if (x < 0 || x >= this.grid[0].length) return null
+        if (y < 0 || y >= this.grid.length) return null
         return this.grid[y][x]
     }
 
@@ -45,20 +45,35 @@ export class Grid {
         return this.valueAt(x + 1, y + 1)
     }
 
+    getNeighbours(x, y) {
+        const neighbours = [
+            [x - 1, y - 1, this.valueAt(x - 1, y - 1)],
+            [x - 1, y, this.valueAt(x - 1, y)],
+            [x - 1, y + 1, this.valueAt(x - 1, y + 1)],
+            [x, y - 1, this.valueAt(x, y - 1)],
+            [x, y + 1, this.valueAt(x, y + 1)],
+            [x + 1, y - 1, this.valueAt(x + 1, y - 1)],
+            [x + 1, y, this.valueAt(x + 1, y)],
+            [x + 1, y + 1, this.valueAt(x + 1, y + 1)]
+        ].filter( neighbour => {
+            return neighbour[2] != null
+        })
+
+        return neighbours
+    }
+
+    doit1() {
+
+
+    }
 
 }
 
-// export function findNext(grid, coordinates: Coordinate, letter: string): Coordinate[] {
-//     const newCoordinates = right(coordinates)
-//
-//     if (getAt(grid, newCoordinates) === letter) return [newCoordinates]
-//
-//     return []
-// }
 
-
-export function doit1(testInput: string[]) {
-
+export function loadGrid(testInput: string[]) {
+    return new Grid(testInput.map(line => {
+        return line.split('')
+    }))
 }
 
 export function doit2(testInput: string[]) {
@@ -69,5 +84,5 @@ export function doit2(testInput: string[]) {
 const filePath = join(__dirname, 'day04.txt');
 const fileContent = readFileSync(filePath, 'utf-8').split("\n")!;
 
-console.log(doit1(fileContent))
-console.log(doit2(fileContent))
+// console.log(doit1(fileContent))
+// console.log(doit2(fileContent))
