@@ -29,52 +29,12 @@ describe('Day 04', () => {
             expect(grid.valueAt(1, 1)).toEqual("E")
         })
 
-        it('should get right', () => {
-            const grid = buildGrid();
-            expect(grid.right(1, 1)).toEqual("F")
-        })
-
-        it('should get left', () => {
-            const grid = buildGrid();
-            expect(grid.left(1, 1)).toEqual("D")
-        })
-
-        it('should get up', () => {
-            const grid = buildGrid();
-            expect(grid.up(1, 1)).toEqual("B")
-        })
-
-        it('should get down', () => {
-            const grid = buildGrid();
-            expect(grid.down(1, 1)).toEqual("H")
-        })
-
-        it('should get upleft', () => {
-            const grid = buildGrid();
-            expect(grid.upleft(1, 1)).toEqual("A")
-        })
-
-        it('should get upright', () => {
-            const grid = buildGrid();
-            expect(grid.upright(1, 1)).toEqual("C")
-        })
-
-        it('should get downleft', () => {
-            const grid = buildGrid();
-            expect(grid.downleft(1, 1)).toEqual("G")
-        })
-
-        it('should get downright', () => {
-            const grid = buildGrid();
-            expect(grid.downright(1, 1)).toEqual("I")
-        })
-
         it('should return none if outside of grid', () => {
             const grid = buildGrid();
-            expect(grid.up(0, 0)).toBeNull()
-            expect(grid.down(0, 2)).toBeNull()
-            expect(grid.left(0, 0)).toBeNull()
-            expect(grid.right(2, 0)).toBeNull()
+            expect(grid.valueAt(-1, 0)).toBeUndefined()
+            expect(grid.valueAt(0, -1)).toBeUndefined()
+            expect(grid.valueAt(3, 0)).toBeUndefined()
+            expect(grid.valueAt(3, 0)).toBeUndefined()
         });
 
 
