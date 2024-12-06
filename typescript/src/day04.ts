@@ -7,11 +7,13 @@ export class Grid {
     constructor(private grid: string[][]) {
     }
 
-    valueAt(x, y): string {
+    valueAt(x, y): string | null {
+        if (x < 0 || x >= this.grid[0].length)  return null
+        if (y < 0 || y >= this.grid.length)  return null
         return this.grid[y][x]
     }
 
-    right(x, y): string {
+    right(x, y) {
         return this.valueAt(x + 1, y)
     }
 

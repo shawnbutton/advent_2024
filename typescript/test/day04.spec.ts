@@ -69,6 +69,14 @@ describe('Day 04', () => {
             expect(grid.downright(1, 1)).toEqual("I")
         })
 
+        it('should return none if outside of grid', () => {
+            const grid = buildGrid();
+            expect(grid.up(0, 0)).toBeNull()
+            expect(grid.down(0, 2)).toBeNull()
+            expect(grid.left(0, 0)).toBeNull()
+            expect(grid.right(2, 0)).toBeNull()
+        });
+
     })
 
 
