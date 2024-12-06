@@ -51,10 +51,10 @@ describe('Day 04', () => {
         expect(grid.doit1()).toEqual(18)
     })
 
-    xit('should find all xmas', () => {
+    it('should find all x-mas', () => {
         const grid = loadGrid(testInput);
         // expect(grid.valueAt(1,1)).toEqual('S')
-        expect(grid.doit1()).toEqual(18)
+        expect(grid.doit2()).toEqual(9)
     })
 
 

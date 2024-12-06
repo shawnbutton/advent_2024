@@ -36,8 +36,7 @@ export class Grid {
             )
     }
 
-    doit1
-    () {
+    doit1() {
         let totalXmas = 0
 
         for (let y = 0; y < this.grid.length; y++) {
@@ -96,6 +95,26 @@ export class Grid {
 
     }
 
+    doit2() {
+        let totalXmas = 0
+
+        for (let y = 0; y < this.grid.length; y++) {
+            for (let x = 0; x < this.grid[y].length; x++) {
+                const value = this.valueAt(x, y);
+                if (value === 'A') {
+                    const diag1 = this.valueAt(x - 1, y - 1) + this.valueAt(x + 1, y + 1)
+                    const diag2 = this.valueAt(x + 1, y - 1) + this.valueAt(x - 1, y + 1)
+
+                    if (((diag1 === "SM") || (diag1 === "MS")) && ((diag2 === "SM") || (diag2 === "MS"))) {
+                        totalXmas += 1
+                    }
+                }
+            }
+        }
+
+        return totalXmas
+
+    }
 }
 
 
@@ -116,4 +135,4 @@ const fileContent = readFileSync(filePath, 'utf-8').split("\n")!;
 const grid = loadGrid(fileContent)
 
 console.log(grid.doit1())
-// console.log(doit2(fileContent))
+console.log(grid.doit2())
