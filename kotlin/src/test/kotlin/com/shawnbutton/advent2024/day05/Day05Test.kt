@@ -64,6 +64,12 @@ class Day05Test {
     }
 
     @Test
+    fun should_return_middle_of_list_as_int() {
+        Assertions.assertEquals(2, middle(listOf("1", "2", "3")))
+        Assertions.assertEquals(3, middle(listOf("1", "2", "3", "4", "5")))
+    }
+
+    @Test
     fun doIt1() {
         Assertions.assertEquals(2, doit1(inputStrings))
     }

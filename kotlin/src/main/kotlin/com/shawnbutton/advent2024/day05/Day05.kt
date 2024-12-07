@@ -11,6 +11,10 @@ fun isViolation(rules: List<String>, pair: Pair<String, String>): Boolean {
     return rules.contains(backwardFormattedPair)
 }
 
+fun middle(lines: List<String>): Int {
+    return lines[lines.size / 2].toInt()
+}
+
 fun doit1(lines: List<String>): Int {
     return 123
 }
