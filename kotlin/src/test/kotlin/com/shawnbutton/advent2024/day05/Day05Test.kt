@@ -1,6 +1,8 @@
 package com.shawnbutton.advent2024.day05
 
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertFalse
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
 class Day05Test {
@@ -45,11 +47,21 @@ class Day05Test {
     fun should_parse_input_into_rules_and_updates() {
         val (rules, updates) = parseFile(inputStrings)
 
-
         Assertions.assertEquals(givenRules, rules)
         Assertions.assertEquals(givenUpdates, updates)
     }
 
+    @Test
+    fun should_check_a_pair_against_a_list_of_rules() {
+        val rules = listOf(
+            "47|53",
+            "97|13"
+        )
+
+        assertFalse(isViolation(rules, Pair("1", "2")), "not found")
+        assertFalse(isViolation(rules, Pair("47", "53")), "found correct")
+        assertTrue(isViolation(rules, Pair("53", "47")), "found violation")
+    }
 
     @Test
     fun doIt1() {

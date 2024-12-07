@@ -6,6 +6,11 @@ fun parseFile(strings: List<String>): Pair<List<String>, List<String>> {
 }
 
 
+fun isViolation(rules: List<String>, pair: Pair<String, String>): Boolean {
+    val backwardFormattedPair = pair.second + "|" + pair.first
+    return rules.contains(backwardFormattedPair)
+}
+
 fun doit1(lines: List<String>): Int {
     return 123
 }
