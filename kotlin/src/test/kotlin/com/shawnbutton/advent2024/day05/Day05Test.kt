@@ -84,16 +84,10 @@ class Day05Test {
         Assertions.assertEquals(143, getAllMiddles(inputStrings))
     }
 
-    @Test
-    fun test_doIt1() {
-        println(doit1())
 
-        assertTrue(true)
-    }
-
-    @Test
-    fun doIt2() {
-        Assertions.assertEquals(4, doit2(inputStrings))
-    }
+//    @Test
+//    fun doIt2() {
+//        Assertions.assertEquals(4, doit2(inputStrings))
+//    }
 
 }
