@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 class Day05Test {
 
-    val inputStrings = listOf(
+    val givenRules = listOf(
         "47|53",
         "97|13",
         "97|61",
@@ -26,8 +26,10 @@ class Day05Test {
         "75|61",
         "47|29",
         "75|13",
-        "53|13",
-        "",
+        "53|13"
+    )
+
+    val givenUpdates = listOf(
         "75,47,61,53,29",
         "97,61,53,29,13",
         "75,29,13",
@@ -36,11 +38,17 @@ class Day05Test {
         "97,13,75,29,47"
     )
 
-    @Test
-    fun should_something() {
-        Assertions.assertEquals(true, false)
-    }
+    val inputStrings = givenRules + "" + givenUpdates
 
+
+    @Test
+    fun should_parse_input_into_rules_and_updates() {
+        val (rules, updates) = parseFile(inputStrings)
+
+
+        Assertions.assertEquals(givenRules, rules)
+        Assertions.assertEquals(givenUpdates, updates)
+    }
 
 
     @Test
