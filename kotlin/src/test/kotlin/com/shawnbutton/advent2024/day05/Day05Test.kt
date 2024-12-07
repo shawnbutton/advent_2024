@@ -45,7 +45,7 @@ class Day05Test {
 
     @Test
     fun should_parse_input_into_rules_and_updates() {
-        val (rules, updates) = parseFile(inputStrings)
+        val (rules, updates) = parseLines(inputStrings)
 
         Assertions.assertEquals(givenRules, rules)
         Assertions.assertEquals(givenUpdates, updates)
@@ -64,14 +64,31 @@ class Day05Test {
     }
 
     @Test
-    fun should_return_middle_of_list_as_int() {
-        Assertions.assertEquals(2, middle(listOf("1", "2", "3")))
-        Assertions.assertEquals(3, middle(listOf("1", "2", "3", "4", "5")))
+    fun should_return_middle_of_list() {
+        Assertions.assertEquals("2", middle(listOf("1", "2", "3")))
+        Assertions.assertEquals("3", middle(listOf("1", "2", "3", "4", "5")))
     }
 
     @Test
-    fun doIt1() {
-        Assertions.assertEquals(2, doit1(inputStrings))
+    fun should_pass_update() {
+        Assertions.assertEquals(false, updateViolates(givenRules, givenUpdates[0]))
+        Assertions.assertEquals(false, updateViolates(givenRules, givenUpdates[1]))
+        Assertions.assertEquals(false, updateViolates(givenRules, givenUpdates[2]))
+        Assertions.assertEquals(true, updateViolates(givenRules, givenUpdates[3]))
+        Assertions.assertEquals(true, updateViolates(givenRules, givenUpdates[4]))
+        Assertions.assertEquals(true, updateViolates(givenRules, givenUpdates[5]))
+    }
+
+    @Test
+    fun should_do_test_data() {
+        Assertions.assertEquals(143, getAllMiddles(inputStrings))
+    }
+
+    @Test
+    fun test_doIt1() {
+        println(doit1())
+
+        assertTrue(true)
     }
 
     @Test
