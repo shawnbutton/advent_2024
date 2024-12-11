@@ -42,8 +42,7 @@ class Day06Test {
     fun should_do_test_grid() {
         val grid = toGrid(testInput)
 
-        countSteps(grid)
-
+        assertEquals(41, countSteps(grid))
 
     }
 
