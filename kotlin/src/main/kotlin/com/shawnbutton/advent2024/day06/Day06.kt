@@ -4,19 +4,46 @@ import com.shawnbutton.advent2024.day06.Direction.*
 import com.shawnbutton.advent2024.loadFile
 
 
-fun getStartingPos(grid: List<List<String>>): Pair<Int, Int> {
-    for (y in grid.indices) {
-        for (x in grid[y].indices) {
-            if (grid[y][x] == "^") {
-                return Pair(x, y)
+class Grid(strings: List<String>) {
+
+    private val grid: List<MutableList<String>> = strings.map { it.toList().map { char -> char.toString() }.toMutableList() }
+
+    fun printGrid() {
+        grid.forEach { row -> println(row.joinToString("")) }
+    }
+
+    fun getGrid(): List<MutableList<String>> {
+        return grid
+    }
+
+    fun get(position: Pair<Int, Int>): String {
+        return grid[position.second][position.first]
+    }
+
+    fun set(position: Pair<Int, Int>, value: String) {
+        grid[position.second][position.first] = value
+    }
+
+    fun isInBounds(position: Pair<Int, Int>): Boolean {
+        return position.second in grid.indices && position.first in grid[position.second].indices
+    }
+
+    fun getStartingPos(): Pair<Int, Int> {
+        for (y in grid.indices) {
+            for (x in grid[y].indices) {
+                if (grid[y][x] == "^") {
+                    return Pair(x, y)
+                }
             }
         }
+        throw IllegalArgumentException("Starting position not found in the grid")
     }
-    throw IllegalArgumentException("Starting position not found in the grid")
-}
 
-fun toGrid(strings: List<String>): List<List<String>> {
-    return strings.map { it.toList().map { char -> char.toString() } }
+    fun countX(): Int {
+        return grid.sumOf { row -> row.count { it == "X" } }
+    }
+    
+    
 }
 
 enum class Direction(val delta: Pair<Int, Int>) {
@@ -31,21 +58,22 @@ fun addPairs(pair1: Pair<Int, Int>, pair2: Pair<Int, Int>): Pair<Int, Int> {
 }
 
 
-fun countSteps(grid: List<List<String>>): Int {
+fun countSteps(grid: Grid): Int {
     var numSteps = 0
 
     var currentDirection = UP
-    var currentPosition = getStartingPos(grid)
+    var currentPosition = grid.getStartingPos()
 
-    var inGrid = true
+    grid.set(currentPosition, "X")
 
-    while (inGrid) {
+    while (grid.isInBounds(currentPosition)) {
         val possibleNext = addPairs(currentPosition, currentDirection.delta)
 
+        if (!grid.isInBounds(possibleNext)) {
+            return grid.countX()
+        }
 
-        if (possibleNext.second in grid.indices && possibleNext.first in grid[possibleNext.second].indices) return numSteps
-
-        val nextElement = grid[possibleNext.second][possibleNext.first]
+        val nextElement = grid.get(possibleNext)
 
         if (nextElement == "#") {
             currentDirection = when (currentDirection) {
@@ -56,27 +84,25 @@ fun countSteps(grid: List<List<String>>): Int {
             }
         } else {
             currentPosition = possibleNext
+            grid.set(currentPosition, "X")
             numSteps++
         }
     }
-
-
-    return numSteps
+    return -1
 }
 
 fun main() {
     val lines = loadFile("/day06.txt")
-    println(doit1(lines))
-    println(doit2(lines))
+    val grid = Grid(lines)
+    println(countSteps(grid))
 }
 
 
-fun doit1(lines: List<String>): Int {
-
-    return 999
+fun doit1(grid: Grid): Int {
+    return countSteps(grid)
 }
 
-fun doit2(lines: List<String>): Int {
-    return 123
+fun doit2(grid: Grid): Int {
+    return grid.countX()
 }
 

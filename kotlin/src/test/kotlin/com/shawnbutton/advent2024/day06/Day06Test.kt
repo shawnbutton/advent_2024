@@ -27,20 +27,20 @@ class Day06Test {
             "123"
         )
 
-        assertEquals(listOf(listOf("A", "B", "C"), listOf("1", "2", "3")), toGrid(given))
+        assertEquals(listOf(listOf("A", "B", "C"), listOf("1", "2", "3")), Grid(given).getGrid())
     }
 
     @Test
     fun should_get_starting_position() {
-        val grid = toGrid(testInput)
+        val grid = Grid(testInput)
 
-        assertEquals(Pair(4,6), getStartingPos(grid))
+        assertEquals(Pair(4,6), grid.getStartingPos())
     }
 
 
     @Test
     fun should_do_test_grid() {
-        val grid = toGrid(testInput)
+        val grid = Grid(testInput)
 
         assertEquals(41, countSteps(grid))
 
