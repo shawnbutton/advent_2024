@@ -43,7 +43,13 @@ class Day06Test {
         val grid = Grid(testInput)
 
         assertEquals(41, countSteps(grid))
+    }
 
+    @Test
+    fun should_count_possible_loops() {
+        val grid = Grid(testInput)
+
+        assertEquals(6, countObstructionsThatLoop(grid))
     }
 
 }

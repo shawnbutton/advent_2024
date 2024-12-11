@@ -8,6 +8,11 @@ class Grid(strings: List<String>) {
 
     private val grid: List<MutableList<String>> = strings.map { it.toList().map { char -> char.toString() }.toMutableList() }
 
+    fun cloneGrid(): Grid {
+        val clonedGrid = grid.map { it.toMutableList() }
+        return Grid(clonedGrid.map { it.joinToString("") })
+    }
+
     fun printGrid() {
         grid.forEach { row -> println(row.joinToString("")) }
     }
@@ -91,18 +96,67 @@ fun countSteps(grid: Grid): Int {
     return -1
 }
 
+fun seeIfLoop(grid: Grid): Boolean {
+    var numIterations = 0
+
+    var currentDirection = UP
+    var currentPosition = grid.getStartingPos()
+
+    grid.set(currentPosition, "X")
+
+    while (numIterations < 100000) { // grossly cheat and brute-force a loop check
+        numIterations++
+        val possibleNext = addPairs(currentPosition, currentDirection.delta)
+
+        if (!grid.isInBounds(possibleNext)) {
+            return false
+        }
+
+        val nextElement = grid.get(possibleNext)
+        
+        if (nextElement == "#") {
+            currentDirection = when (currentDirection) {
+                UP -> RIGHT
+                RIGHT -> DOWN
+                DOWN -> LEFT
+                LEFT -> UP
+            }
+        } else {
+            currentPosition = possibleNext
+            grid.set(currentPosition, "X")
+        }
+    }
+    return true
+}
+
 fun main() {
     val lines = loadFile("/day06.txt")
     val grid = Grid(lines)
     println(countSteps(grid))
+    val grid2 = Grid(lines)
+    println(countObstructionsThatLoop(grid2))
 }
 
 
-fun doit1(grid: Grid): Int {
-    return countSteps(grid)
-}
+fun countObstructionsThatLoop(grid: Grid): Int {
+    var loops = 0
+    var startingPosition = grid.getStartingPos()
 
-fun doit2(grid: Grid): Int {
-    return grid.countX()
+    for (y in grid.getGrid().indices) {
+        for (x in grid.getGrid()[y].indices) {
+            val currentPosition = Pair(x, y)
+            if (currentPosition == startingPosition) {
+                continue
+            }
+
+            val clonedGrid = grid.cloneGrid()
+            clonedGrid.set(currentPosition, "#")
+            if (seeIfLoop(clonedGrid)) {
+                loops++
+            }
+        }
+    }
+
+    return loops
 }
 
