@@ -1,3 +1,5 @@
+import {doit1, parseLine} from "../src/day07";
+
 const testInput = [
     '190: 10 19',
     '3267: 81 40 27',
@@ -12,8 +14,16 @@ const testInput = [
 
 describe('Day 07', () => {
 
-    it('should run test', () => {
-        expect(true).toBe(true);
+    it('should parse a line', () => {
+        expect(parseLine('3267: 81 40 27')).toEqual({
+            total: 3267,
+            numbers: [81, 40, 27]
+        })
+    });
+
+
+    xit('should run pass the example', () => {
+        expect(doit1(testInput)).toEqual(3749);
     });
 
 })
