@@ -66,8 +66,8 @@ describe('Day 07', () => {
                 (2 + 3) * 4,
                 (2 * 3) * 4,
                 (23) * 4,
-                (2 + 34),
-                (2 * 34),
+                (54),
+                (64),
                 234
             ];
             expect(allTotalsWithThreeOps([2, 3, 4])).toEqual(expected)
@@ -75,15 +75,15 @@ describe('Day 07', () => {
 
 
         it('should find if operators meet total', () => {
-            // expect(isAbleToMakeTotalWithThreeOps(testInput[0])).toBe(true)
-            // expect(isAbleToMakeTotalWithThreeOps(testInput[1])).toBe(true)
-            // expect(isAbleToMakeTotalWithThreeOps(testInput[2])).toBe(false)
-            // expect(isAbleToMakeTotalWithThreeOps(testInput[3])).toBe(true)
+            expect(isAbleToMakeTotalWithThreeOps(testInput[0])).toBe(true)
+            expect(isAbleToMakeTotalWithThreeOps(testInput[1])).toBe(true)
+            expect(isAbleToMakeTotalWithThreeOps(testInput[2])).toBe(false)
+            expect(isAbleToMakeTotalWithThreeOps(testInput[3])).toBe(true)
             expect(isAbleToMakeTotalWithThreeOps(testInput[4])).toBe(true)
-            // expect(isAbleToMakeTotalWithThreeOps(testInput[5])).toBe(false)
-            // expect(isAbleToMakeTotalWithThreeOps(testInput[6])).toBe(true)
-            // expect(isAbleToMakeTotalWithThreeOps(testInput[7])).toBe(false)
-            // expect(isAbleToMakeTotalWithThreeOps(testInput[8])).toBe(true)
+            expect(isAbleToMakeTotalWithThreeOps(testInput[5])).toBe(false)
+            expect(isAbleToMakeTotalWithThreeOps(testInput[6])).toBe(true)
+            expect(isAbleToMakeTotalWithThreeOps(testInput[7])).toBe(false)
+            expect(isAbleToMakeTotalWithThreeOps(testInput[8])).toBe(true)
         });
 
         it('should run pass the example 2', () => {
