@@ -1,4 +1,12 @@
-import {allTotals, doit1, isAbleToMakeTotal, parseLine} from "../src/day07";
+import {
+    allTotals,
+    allTotalsWithThreeOps,
+    doit1,
+    doit2,
+    isAbleToMakeTotal,
+    isAbleToMakeTotalWithThreeOps,
+    parseLine
+} from "../src/day07";
 
 const testInput = [
     '190: 10 19',
@@ -23,10 +31,10 @@ describe('Day 07', () => {
 
     it('should get all totals for numbers', () => {
         const expected = [
-            9,
-            10,
-            20,
-            24
+            (2 + 3) + 4,
+            (2 * 3) + 4,
+            (2 + 3) * 4,
+            (2 * 3) * 4
         ];
         expect(allTotals([2, 3, 4])).toEqual(expected)
     });
@@ -44,8 +52,43 @@ describe('Day 07', () => {
     });
 
 
-    it('should run pass the example', () => {
+    it('should run pass the example 1', () => {
         expect(doit1(testInput)).toEqual(3749);
+    });
+
+
+    describe('part 2', () => {
+        it('should get all totals for numbers', () => {
+            const expected = [
+                (2 + 3) + 4,
+                (2 * 3) + 4,
+                (23) + 4,
+                (2 + 3) * 4,
+                (2 * 3) * 4,
+                (23) * 4,
+                (2 + 34),
+                (2 * 34),
+                234
+            ];
+            expect(allTotalsWithThreeOps([2, 3, 4])).toEqual(expected)
+        });
+
+
+        it('should find if operators meet total', () => {
+            // expect(isAbleToMakeTotalWithThreeOps(testInput[0])).toBe(true)
+            // expect(isAbleToMakeTotalWithThreeOps(testInput[1])).toBe(true)
+            // expect(isAbleToMakeTotalWithThreeOps(testInput[2])).toBe(false)
+            // expect(isAbleToMakeTotalWithThreeOps(testInput[3])).toBe(true)
+            expect(isAbleToMakeTotalWithThreeOps(testInput[4])).toBe(true)
+            // expect(isAbleToMakeTotalWithThreeOps(testInput[5])).toBe(false)
+            // expect(isAbleToMakeTotalWithThreeOps(testInput[6])).toBe(true)
+            // expect(isAbleToMakeTotalWithThreeOps(testInput[7])).toBe(false)
+            // expect(isAbleToMakeTotalWithThreeOps(testInput[8])).toBe(true)
+        });
+
+        it('should run pass the example 2', () => {
+            expect(doit2(testInput)).toEqual(11387);
+        });
     });
 
 })
