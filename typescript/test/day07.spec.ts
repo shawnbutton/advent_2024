@@ -44,7 +44,7 @@ describe('Day 07', () => {
     });
 
 
-    xit('should run pass the example', () => {
+    it('should run pass the example', () => {
         expect(doit1(testInput)).toEqual(3749);
     });
 

@@ -1,6 +1,5 @@
-export const doit1 = (testInput: string[]): number => {
-    return -999;
-};
+import {join} from "path";
+import {readFileSync} from "fs";
 
 export const parseLine = (line) => {
     const [first, rest] = line.split(":")
@@ -18,15 +17,13 @@ export const parseLine = (line) => {
 }
 
 export const allTotals = (numbers: number[]) => {
-    let allFormulas = numbers.reduce(
+    return numbers.reduce(
         (accum, current, index) => {
             if (index === 0) return [current]
             const withPlus = accum.map(s => s + current)
             const withTimes = accum.map(s => s * current)
             return [...withPlus, ...withTimes]
         }, [0]);
-
-    return allFormulas;
 };
 
 export const isAbleToMakeTotal = (line: string): boolean => {
@@ -36,7 +33,23 @@ export const isAbleToMakeTotal = (line: string): boolean => {
         .some(number => {
             return number === parsed.total;
         })
-
 }
 
+export const doit1 = (testInput: string[]): number => {
+    return testInput
+        .filter(isAbleToMakeTotal)
+        .map(parseLine)
+        .map(parsed => parsed.total)
+        .reduce((accum, current) => {
+            return accum + current
+        }, 0)
+};
+
+const filePath = join(__dirname, 'day07.txt');
+const fileContents = readFileSync(filePath, 'utf-8');
+const lines = fileContents.split("\n")!.slice(0, -1);
+
+const total = doit1(lines)
+
+console.log(total)
 
