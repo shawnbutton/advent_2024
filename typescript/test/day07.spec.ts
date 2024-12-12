@@ -1,4 +1,4 @@
-import {doit1, parseLine} from "../src/day07";
+import {allTotals, doit1, isAbleToMakeTotal, parseLine} from "../src/day07";
 
 const testInput = [
     '190: 10 19',
@@ -19,6 +19,28 @@ describe('Day 07', () => {
             total: 3267,
             numbers: [81, 40, 27]
         })
+    });
+
+    it('should get all totals for numbers', () => {
+        const expected = [
+            9,
+            10,
+            20,
+            24
+        ];
+        expect(allTotals([2, 3, 4])).toEqual(expected)
+    });
+
+    it('should find if operators meet total', () => {
+        expect(isAbleToMakeTotal(testInput[0])).toBe(true)
+        expect(isAbleToMakeTotal(testInput[1])).toBe(true)
+        expect(isAbleToMakeTotal(testInput[2])).toBe(false)
+        expect(isAbleToMakeTotal(testInput[3])).toBe(false)
+        expect(isAbleToMakeTotal(testInput[4])).toBe(false)
+        expect(isAbleToMakeTotal(testInput[5])).toBe(false)
+        expect(isAbleToMakeTotal(testInput[6])).toBe(false)
+        expect(isAbleToMakeTotal(testInput[7])).toBe(false)
+        expect(isAbleToMakeTotal(testInput[8])).toBe(true)
     });
 
 
