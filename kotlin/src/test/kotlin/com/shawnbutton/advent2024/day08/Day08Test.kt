@@ -38,6 +38,13 @@ class Day08Test {
     }
 
     @Test
+    fun should_get_all_locations_for_given_antenna() {
+        val grid = Grid(testInput)
+        assertEquals(listOf(Pair(6, 5), Pair(8, 8), Pair(9, 9)), grid.getLocationsForAntenna("A"))
+
+    }
+
+    @Test
     @Ignore
     fun should_do_part1() {
         assertEquals(14, doPart1(testInput))

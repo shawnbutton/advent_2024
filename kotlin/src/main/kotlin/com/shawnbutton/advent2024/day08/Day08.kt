@@ -39,6 +39,18 @@ class Grid(strings: List<String>) {
         return grid.flatten().distinct().filter{ it != "."}
     }
 
+    fun getLocationsForAntenna(string: String): List<Pair<Int, Int>> {
+        val locations = mutableListOf<Pair<Int, Int>>()
+        grid.forEachIndexed { rowIndex, row ->
+            row.forEachIndexed { colIndex, value ->
+                if (value == string) {
+                    locations.add(Pair(colIndex, rowIndex))
+                }
+            }
+        }
+        return locations
+    }
+
 }
 
 
