@@ -58,4 +58,10 @@ class Day08Test {
         assertEquals(14, doPart1(testInput))
     }
 
+    @Test
+
+    fun should_do_part2() {
+        assertEquals(34, doPart2(testInput))
+    }
+
 }
