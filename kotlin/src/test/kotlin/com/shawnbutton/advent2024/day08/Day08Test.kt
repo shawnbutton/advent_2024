@@ -25,7 +25,16 @@ class Day08Test {
 
     @Test
     fun should_load_grid() {
-        assertEquals("0", Grid(testInput).getAt(Pair(5, 2)))
+        val grid = Grid(testInput)
+        assertEquals("0", grid.getAt(Pair(5, 2)))
+        assertEquals("A", grid.getAt(Pair(6, 5)))
+        assertEquals(".", grid.getAt(Pair(0, 0)))
+    }
+
+    @Test
+    fun should_get_all_unique_antennas() {
+        val grid = Grid(testInput)
+        assertEquals(listOf("0", "A"), grid.getUnique())
     }
 
     @Test

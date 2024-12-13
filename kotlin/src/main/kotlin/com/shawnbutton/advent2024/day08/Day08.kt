@@ -35,6 +35,10 @@ class Grid(strings: List<String>) {
         return grid.sumOf { row -> row.count { it == "X" } }
     }
 
+    fun getUnique(): List<String>  {
+        return grid.flatten().distinct().filter{ it != "."}
+    }
+
 }
 
 
