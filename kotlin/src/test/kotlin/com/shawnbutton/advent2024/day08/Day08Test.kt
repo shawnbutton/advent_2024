@@ -45,6 +45,12 @@ class Day08Test {
     }
 
     @Test
+    fun should_get_antinodes_for_all_antennas() {
+        val two_antennas = listOf(Pair(5, 5), Pair(7, 7))
+        assertEquals(listOf(Pair(3, 3), Pair(9, 9)), getAntiNodes(two_antennas))
+    }
+
+    @Test
     @Ignore
     fun should_do_part1() {
         assertEquals(14, doPart1(testInput))

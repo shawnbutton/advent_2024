@@ -4,7 +4,8 @@ import com.shawnbutton.advent2024.loadFile
 
 class Grid(strings: List<String>) {
 
-    private val grid: List<MutableList<String>> = strings.map { it.toList().map { char -> char.toString() }.toMutableList() }
+    private val grid: List<MutableList<String>> =
+        strings.map { it.toList().map { char -> char.toString() }.toMutableList() }
 
     fun cloneGrid(): Grid {
         val clonedGrid = grid.map { it.toMutableList() }
@@ -35,8 +36,8 @@ class Grid(strings: List<String>) {
         return grid.sumOf { row -> row.count { it == "X" } }
     }
 
-    fun getUnique(): List<String>  {
-        return grid.flatten().distinct().filter{ it != "."}
+    fun getUnique(): List<String> {
+        return grid.flatten().distinct().filter { it != "." }
     }
 
     fun getLocationsForAntenna(string: String): List<Pair<Int, Int>> {
@@ -54,8 +55,25 @@ class Grid(strings: List<String>) {
 }
 
 
-fun doesNothing(): Boolean {
-    return true
+fun getAntiNodes(antennas: List<Pair<Int, Int>>): List<Pair<Int, Int>> {
+    val combinations = mutableListOf<Pair<Pair<Int, Int>, Pair<Int, Int>>>()
+    for (i in antennas.indices) {
+        for (j in i + 1 until antennas.size) {
+            combinations.add(Pair(antennas[i], antennas[j]))
+        }
+    }
+    val allAntinodes = combinations
+        .map { pair: Pair<Pair<Int, Int>, Pair<Int, Int>> ->
+            val antenna1 = pair.first
+            val antenna2 = pair.second
+            val xDistance = (antenna1.first - antenna2.first)
+            val yDistance = (antenna1.second - antenna2.second)
+            val antinode1 = Pair(antenna1.first + xDistance, antenna1.second + yDistance)
+            val antinode2 = Pair(antenna2.first - xDistance, antenna2.second - yDistance)
+            return listOf(antinode1, antinode2)
+        }
+
+    return allAntinodes
 }
 
 fun doPart1(lines: List<String>): Int {
