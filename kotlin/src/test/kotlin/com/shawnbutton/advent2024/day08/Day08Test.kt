@@ -34,7 +34,7 @@ class Day08Test {
     @Test
     fun should_get_all_unique_antennas() {
         val grid = Grid(testInput)
-        assertEquals(listOf("0", "A"), grid.getUnique())
+        assertEquals(listOf("0", "A"), grid.getUniqueAntennas())
     }
 
     @Test
@@ -54,7 +54,6 @@ class Day08Test {
     }
 
     @Test
-    @Ignore
     fun should_do_part1() {
         assertEquals(14, doPart1(testInput))
     }

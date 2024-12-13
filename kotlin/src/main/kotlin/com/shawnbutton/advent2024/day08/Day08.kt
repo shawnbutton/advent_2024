@@ -36,7 +36,7 @@ class Grid(strings: List<String>) {
         return grid.sumOf { row -> row.count { it == "X" } }
     }
 
-    fun getUnique(): List<String> {
+    fun getUniqueAntennas(): List<String> {
         return grid.flatten().distinct().filter { it != "." }
     }
 
@@ -76,13 +76,25 @@ fun getAntiNodes(antennas: List<Pair<Int, Int>>): List<Pair<Int, Int>> {
     return allAntinodes
 }
 
+
 fun doPart1(lines: List<String>): Int {
-    return -999
+    val grid = Grid(lines)
+
+    val allAntennaTypes = grid.getUniqueAntennas()
+
+    return allAntennaTypes.flatMap { antennaType ->
+        val antennaLocs = grid.getLocationsForAntenna(antennaType)
+        val antiNodes = getAntiNodes(antennaLocs)
+        return@flatMap antiNodes
+    }
+        .distinct()
+        .filter(grid::isInBounds)
+        .size
 }
 
 fun main() {
     val lines = loadFile("/day08.txt")
-    val grid = Grid(lines)
+    println(doPart1(lines))
 }
 
 
