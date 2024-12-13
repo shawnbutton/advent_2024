@@ -63,14 +63,14 @@ fun getAntiNodes(antennas: List<Pair<Int, Int>>): List<Pair<Int, Int>> {
         }
     }
     val allAntinodes = combinations
-        .map { pair: Pair<Pair<Int, Int>, Pair<Int, Int>> ->
+        .flatMap { pair: Pair<Pair<Int, Int>, Pair<Int, Int>> ->
             val antenna1 = pair.first
             val antenna2 = pair.second
             val xDistance = (antenna1.first - antenna2.first)
             val yDistance = (antenna1.second - antenna2.second)
             val antinode1 = Pair(antenna1.first + xDistance, antenna1.second + yDistance)
             val antinode2 = Pair(antenna2.first - xDistance, antenna2.second - yDistance)
-            return listOf(antinode1, antinode2)
+            return@flatMap listOf(antinode1, antinode2)
         }
 
     return allAntinodes
