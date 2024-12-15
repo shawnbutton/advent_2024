@@ -10,10 +10,73 @@ class Day09Test {
     @Test
     fun should_represent_input_as_disk_blocks() {
         val expected =
-            listOf<Int>(0, 0, -1, -1, -1, 1, 1, 1, -1, -1, -1, 2, -1, -1, -1, 3, 3, 3, -1, 4, 4, -1, 5, 5, 5, 5, -1, 6, 6, 6, 6, -1, 7, 7, 7, -1, 8, 8, 8, 8, 9, 9)
+            listOf<Int>(
+                0,
+                0,
+                -1,
+                -1,
+                -1,
+                1,
+                1,
+                1,
+                -1,
+                -1,
+                -1,
+                2,
+                -1,
+                -1,
+                -1,
+                3,
+                3,
+                3,
+                -1,
+                4,
+                4,
+                -1,
+                5,
+                5,
+                5,
+                5,
+                -1,
+                6,
+                6,
+                6,
+                6,
+                -1,
+                7,
+                7,
+                7,
+                -1,
+                8,
+                8,
+                8,
+                8,
+                9,
+                9
+            )
 
         assertEquals(expected, inputToDiskBlocks(testInput))
+    }
 
+    @Test
+    fun should_move_files_into_free_space() {
+        assertEquals(
+            listOf(0, 0, 9, 5, 5),
+            moveFiles(listOf(0, 0, -1, -1, 5, 5, -1, -1, 9)),
+            "simple move"
+        )
+
+        assertEquals(
+            listOf(0, 0, 4, 4, 2, 2, 4),
+            moveFiles(listOf(0, 0, -1, -1, 2, 2, -1, -1, 4, 4, 4)),
+            "move where there's not enough space"
+        )
+
+        assertEquals(
+            listOf(0, 0, 2, 1, 1),
+            moveFiles(listOf(0, 0, -1, -1, 1, 1, -1, -1, -1, -1, 2)),
+            "move where there's free space at the end"
+        )
     }
 
     @Test
