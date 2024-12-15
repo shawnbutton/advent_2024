@@ -2,23 +2,21 @@ package com.shawnbutton.advent2024.day09
 
 import com.shawnbutton.advent2024.loadFileAsString
 
+fun toIntPair(asString: String): Pair<Int, Int>  {
+    return Pair(
+        asString[0].digitToInt(),
+        if (asString.length > 1) asString[1].digitToInt() else 0
+    )
+}
+
 fun inputToDiskBlocks(input: String): List<Int> {
-    val something = input.chunked(2)
-        .map {
-            Pair(
-                it[0].digitToInt(),
-                if (it.length > 1) it[1].digitToInt() else 0
-            )
-        }
-        .mapIndexed { index, pair ->
+    return input.chunked(2)
+        .map(::toIntPair)
+        .flatMapIndexed { index, pair: Pair<Int, Int> ->
             val file = List(pair.first) { index }
-
             val emptySpace = List(pair.second) { -1 }
-
-            return@mapIndexed file + emptySpace
-        }.flatten()
-
-    return something
+            return@flatMapIndexed file + emptySpace
+        }
 }
 
 
