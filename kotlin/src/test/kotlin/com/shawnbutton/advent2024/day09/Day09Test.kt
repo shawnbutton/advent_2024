@@ -80,7 +80,11 @@ class Day09Test {
     }
 
     @Test
-    @Ignore
+    fun should_calculate_checksum() {
+        assertEquals(8, calcChecksum(listOf(9, 2, 3)))
+    }
+
+    @Test
     fun should_do_part1() {
         assertEquals(1928, doPart1(testInput))
     }

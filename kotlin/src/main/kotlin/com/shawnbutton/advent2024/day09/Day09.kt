@@ -20,26 +20,27 @@ fun inputToDiskBlocks(input: String): List<Int> {
 }
 
 fun moveFiles(diskBlocks: List<Int>): List<Int> {
-    val clonedDiskBlocks = diskBlocks.toList()
-
-    var result = diskBlocks.toMutableList()
-    for (i in clonedDiskBlocks.size - 1 downTo 0) {
-        val targetIndex = result.indexOfFirst { it == -1 }
-        if (targetIndex == -1) break
-        if (clonedDiskBlocks[i] != -1) {
-            result[targetIndex] = clonedDiskBlocks[i]
-            result = result.dropLast(1).toMutableList()
-        } else {
-            result = result.dropLast(1).toMutableList()
+    val result = diskBlocks.toMutableList()
+    for (i in diskBlocks.indices.reversed()) {
+        val emptySpace = result.indexOfFirst { it == -1 }
+        if (emptySpace == -1) break
+        if (diskBlocks[i] != -1) {
+            result[emptySpace] = diskBlocks[i]
         }
+        result.removeAt(result.size - 1)
     }
+    return result
+}
 
-    return result.toList()
+fun calcChecksum(diskBlocks: List<Int>): Int {
+    return diskBlocks.mapIndexed { index, value -> index * value }.sum()
 }
 
 
 fun doPart1(input: String): Int {
-    return -999
+    val diskBlocks = inputToDiskBlocks(input)
+    val movedBlocks = moveFiles(diskBlocks)
+    return calcChecksum(movedBlocks)
 }
 
 fun doPart2(input: String): Int {
@@ -47,7 +48,7 @@ fun doPart2(input: String): Int {
 }
 
 fun main() {
-    val lines = loadFileAsString("/day08.txt")
+    val lines = loadFileAsString("/day09.txt")
     println(doPart1(lines))
     println(doPart2(lines))
 }
