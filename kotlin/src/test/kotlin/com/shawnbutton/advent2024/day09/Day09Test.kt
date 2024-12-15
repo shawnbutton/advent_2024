@@ -77,6 +77,12 @@ class Day09Test {
             moveFiles(listOf(0, 0, -1, -1, 1, 1, -1, -1, -1, -1, 2)),
             "move where there's free space at the end"
         )
+
+        assertEquals(
+            listOf(0, 0, 2),
+            moveFiles(listOf(0, 0, -1, -1, -1, -1, -1, -1, -1, -1, 2)),
+            "move where there's free space at the end"
+        )
     }
 
     @Test

@@ -32,12 +32,14 @@ fun moveFiles(diskBlocks: List<Int>): List<Int> {
     return result
 }
 
-fun calcChecksum(diskBlocks: List<Int>): Int {
-    return diskBlocks.mapIndexed { index, value -> index * value }.sum()
+fun calcChecksum(diskBlocks: List<Int>): Long {
+    return diskBlocks
+        .mapIndexed { index, value -> index.toLong() * value.toLong() }
+        .sum()
 }
 
 
-fun doPart1(input: String): Int {
+fun doPart1(input: String): Long {
     val diskBlocks = inputToDiskBlocks(input)
     val movedBlocks = moveFiles(diskBlocks)
     return calcChecksum(movedBlocks)
