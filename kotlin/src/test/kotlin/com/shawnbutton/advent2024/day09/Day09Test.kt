@@ -92,13 +92,12 @@ class Day09Test {
 
     @Test
     fun should_do_part1() {
-        assertEquals(1928, doPart1(testInput))
+        assertEquals(1928, calculatePart1Result(testInput))
     }
 
     @Test
-    @Ignore
     fun should_do_part2() {
-        assertEquals(-9990, doPart2(testInput))
+        assertEquals(2858, calculatePart2Result(testInput))
     }
 
 }
