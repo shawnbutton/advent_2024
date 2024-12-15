@@ -8,11 +8,13 @@ class Day09Test {
     val testInput = "2333133121414131402"
 
     @Test
-    fun should_something() {
-        assertEquals(true, something())
+    fun should_represent_input_as_disk_blocks() {
+        val expected =
+            listOf<Int>(0, 0, -1, -1, -1, 1, 1, 1, -1, -1, -1, 2, -1, -1, -1, 3, 3, 3, -1, 4, 4, -1, 5, 5, 5, 5, -1, 6, 6, 6, 6, -1, 7, 7, 7, -1, 8, 8, 8, 8, 9, 9)
+
+        assertEquals(expected, inputToDiskBlocks(testInput))
+
     }
-
-
 
     @Test
     @Ignore
