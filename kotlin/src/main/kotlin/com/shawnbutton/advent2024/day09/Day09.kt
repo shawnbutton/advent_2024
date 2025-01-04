@@ -42,6 +42,21 @@ fun calculatePart1Result(input: String): Long {
     return calcChecksum(movedBlocks)
 }
 
+fun getLastFile(diskBlocks: List<Int>): List<Int> {
+    val lastValue = diskBlocks.last()
+    val lastElements = diskBlocks.takeLastWhile { it == lastValue }
+    return lastElements
+}
+
+fun moveWholeFiles(diskBlocks: List<Int>): List<Int> {
+
+// here we should go through all files and move them, ignoring -1
+    val noEmptyAtEnd =  diskBlocks.dropLastWhile { it == -1 }
+    val lastValue = noEmptyAtEnd.last()
+    val lastElements = noEmptyAtEnd.takeLastWhile { it == lastValue }
+    return lastElements
+}
+
 fun calculatePart2Result(input: String): Int {
     return -999
 }

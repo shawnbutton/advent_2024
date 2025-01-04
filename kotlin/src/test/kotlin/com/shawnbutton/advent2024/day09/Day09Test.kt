@@ -96,6 +96,22 @@ class Day09Test {
     }
 
     @Test
+    fun should_get_last_file() {
+        assertEquals(listOf(5, 5), getLastFile(listOf(1, 1, -1, -1, 5, 5)))
+    }
+
+
+    @Test
+    fun should_move_whole_files_into_free_space() {
+        assertEquals(
+            listOf(0, 0, 9, -1, 5, 5),
+            moveWholeFiles(listOf(0, 0, -1, -1, 5, 5, -1, -1, 9)),
+            "simple move"
+        )
+    }
+
+
+    @Test
     fun should_do_part2() {
         assertEquals(2858, calculatePart2Result(testInput))
     }
